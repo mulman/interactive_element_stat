@@ -22,8 +22,7 @@ if($recordCount != 0)
 
     $record = getDetailElementStat($element,$page);
     $recordCount = count($record);
-    //echo $recordCount;
-    
+     
     foreach($record as $r):      
         $table->data[] = array($r->element_part_name,  secondsToTime(makeTotalDetailTime($element, $r->element_part_name)));
     endforeach;
