@@ -1,4 +1,4 @@
-# 10.2 beta 22.3.2012
+# 1.02 beta 22.3.2012
 - opravene pocitanie kliknuti (noactivity sa nepocita ako klik)
 - opravena registracia elementu (element sa neregistruje hned po nacitani, ale az po vykonanej prvej aktivite)
 - doplnena statistika pre jednotlive casti elementu
