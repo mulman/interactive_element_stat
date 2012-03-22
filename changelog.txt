@@ -1,0 +1,16 @@
+# 10.2 beta 22.3.2012
+- opravene pocitanie kliknuti (noactivity sa nepocita ako klik)
+- opravena registracia elementu (element sa neregistruje hned po nacitani, ale az po vykonanej prvej aktivite)
+- doplnena statistika pre jednotlive casti elementu
+- opravene mazanie statistiky
+- odstranenie zaznamenavania aktivity pri pohybe mysou
+
+# 1.01 beta 15.3.2012
+- opravene nazvy stlpcov pre "detail stat"
+- pridany export pre "detail stat"
+- fomatovany export
+- formatovany datum z mysql datetime formatu
+- scitavanie casov len pri skutocnej cinnosti
+
+
+# 1.00 beta 8.3.2012
