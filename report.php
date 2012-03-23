@@ -42,10 +42,11 @@ switch ($element):
 
             $options['stat_type'] = 'all';
             echo "<h2 style='text-align: center'>".get_string('all_element_stat', 'report_'.MODULENAME)."</h2>";              
-//            echo '<center>';
-//            echo '<img style="text-align:center" src="graph.php?id='.$id.'&element='.$element.'&time_period='.$timePeriod.'&type=clicks" alt="graph" />'; 
-//            echo '<img style="text-align:center" src="graph.php?id='.$id.'&element='.$element.'&time_period='.$timePeriod.'&type=time" alt="graph" />'; 
-//            echo '</center><br />';
+            
+            echo '<center>';
+            echo '<img style="text-align:center" src="graph.php?id='.$id.'&element='.$element.'&time_period='.$timePeriod.'&type=clicks" alt="graph" />'; 
+            echo '<img style="text-align:center" src="graph.php?id='.$id.'&element='.$element.'&time_period='.$timePeriod.'&type=time" alt="graph" />';             
+            echo '</center><br />';
              
             print_table($table);  
 

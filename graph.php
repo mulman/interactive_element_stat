@@ -18,23 +18,21 @@ switch ($type):
     
     case "clicks":
         $cfg['title'] = get_string('click_graph', 'report_'.MODULENAME);
-        $cfg['column-color'] = '#999966';
+        //$cfg['column-color'] = '#999966';
         foreach($record as $r):  
-            $data[$r->element_name] = $r->element_access_count;
+            $data[$r->element_name] = $r->fcount;
         endforeach;
     break;    
     
     case "time":
-        $cfg['title'] = get_string('time_graph', 'report_'.MODULENAME);
-        $cfg['column-color'] = '#999966';
+        $cfg['title'] = get_string('access_graph', 'report_'.MODULENAME);
+        //$cfg['column-color'] = '#999966';
         foreach($record as $r):  
-            $data[$r->element_name] = round($r->rozdiel / 60);
+            $data[$r->element_name] = $r->element_access_count;
         endforeach;
     break; 
     
 endswitch;
-
-
 
 //Set content-type header
 header("Content-type: image/png");
@@ -45,12 +43,10 @@ $cfg['width'] = 500;
 $cfg['height'] = 350;
 $cfg['average-line-visible'] = false;
 
-//$cfg['column-color-random'] = true;
-
+$cfg['column-color-random'] = true;
 
 //Create phpMyGraph instance
 $graph = new phpMyGraph();
-
 //Parse
 $graph->parseVerticalColumnGraph($data, $cfg);
 ?>

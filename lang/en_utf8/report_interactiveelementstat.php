@@ -38,6 +38,7 @@ $string['empty_stat'] = 'Stat is empty';
 
 $string['time_graph'] = 'Time Graph in minutes';
 $string['click_graph'] = 'Click Graph';
+$string['access_graph'] = 'Access Graph';
 
 $string['detail1'] = 'Detail stat for element';
 $string['detail2'] = 'All actions';
