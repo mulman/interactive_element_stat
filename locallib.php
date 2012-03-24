@@ -103,8 +103,7 @@ function getAllElementStat($courseid,$timePeriod)
     
     if($timePeriod != 'all') $sql .= getTimePeriodSql($timePeriod);
     
-    $sql .= " GROUP by a.element_name";
-   // $sql .= " ORDER BY a.start_time DESC";
+    $sql .= " GROUP by a.element_name"; 
     
     if(count_records_sql($sql) != 0)
     {     
@@ -203,14 +202,6 @@ function getTimeStatValues($courseid)
     return get_record_sql($sql);
 }
 
-//function getFirstAcces($courseid)
-//{
-//    global $CFG;
-//    $sql = "SELECT MIN(start_time) AS first_access from {$CFG->prefix}".TABLEA." WHERE course = $courseid" ;
-//    
-//    return get_record_sql($sql);
-//}
-
 function printBackButton($url,$options)
 {      
     echo "<center>";
@@ -228,8 +219,6 @@ function makeTotalTime($elementID,$part = 'none')
     if($part != 'none') $sql .= " AND (b.element_part_name='".$part."' OR b.element_part_name IS NULL)";  
     $sql .= " ORDER BY b.time ASC";
     
-    //echo $sql;
-    
     $result = (array)get_records_sql($sql);     
     $finalResult = 0;    
     $last_key = end(array_keys($result));
@@ -242,22 +231,20 @@ function makeTotalTime($elementID,$part = 'none')
         {
             $accessTime = $r->time;
             $activity = false;
-        }        
-            //echo $r->time . " " .$r->element_part_name . " " .$r->element_part_action ."<br />";
+        }       
+            
         $i++;
         if($r->element_part_action == 'access' && $activity != false)
         {
             $accessTime = $r->time;
-             $activity = false;
-            //echo "<b>".$accessTime."</b>";
+            $activity = false;           
         }
         else if($r->element_part_action == 'noactivity' || count($result) == $i)
         {
             $noactivityTime = $r->time;
             $currTime = strtotime($noactivityTime) - strtotime($accessTime);;
             $finalResult += $currTime; 
-            $activity = true;
-            //echo $currTime."<br />";;
+            $activity = true;            
         }
          
     endforeach;   
@@ -270,17 +257,15 @@ function makeTotalDetailTime($elementID,$part = 'none')
     global $CFG;
      
     $sql =  "SELECT * FROM {$CFG->prefix}".TABLEB." b "; 
-    $sql .= "WHERE b.element_usage_id='".$elementID."'";  
-    //if($part != 'none') $sql .= " AND (b.element_part_name='".$part."' OR b.element_part_name IS NULL)";  
-    $sql .= " ORDER BY b.time ASC";   
-    
+    $sql .= "WHERE b.element_usage_id='".$elementID."'";      
+    $sql .= " ORDER BY b.time ASC";       
     
     $result = (array)get_records_sql($sql);     
     $finalResult = 0;    
     $last_key = end(array_keys($result));
     $activity = true;
     $i = 0;
-    //echo "###################<br />";
+    
     foreach ($result as $r):
         
         if($activity && $r->element_part_action != 'access') 
@@ -288,21 +273,19 @@ function makeTotalDetailTime($elementID,$part = 'none')
             $accessTime = $r->time;
             $activity = false;
         }        
-            //echo $r->time . " " .$r->element_part_name . " " .$r->element_part_action ."<br />";
+           
         $i++;
         if($r->element_part_action == 'access' && $activity != false)
         {
             $accessTime = $r->time;
-             $activity = false;
-            //echo "<b>".$accessTime."</b>";
+             $activity = false;            
         }
         else if($r->element_part_action == 'noactivity' || count($result) == $i || $r->element_part_name != $part)
         {
             $noactivityTime = $r->time;
             $currTime = strtotime($noactivityTime) - strtotime($accessTime);;
             $finalResult += $currTime; 
-            $activity = true;
-           // echo $currTime."<br />";;
+            $activity = true;           
         }
          
     endforeach;   
@@ -348,6 +331,5 @@ function notRegistered($elementID)
     else
         return false;
 }
-
 
 ?>

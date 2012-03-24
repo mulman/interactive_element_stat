@@ -16,5 +16,4 @@
 - formatovany datum z mysql datetime formatu
 - scitavanie casov len pri skutocnej cinnosti
 
-
 # 1.00 beta 8.3.2012
