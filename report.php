@@ -4,9 +4,6 @@ require_once('../../../config.php');
 require_once('locallib.php');
 require_once('header.php');
 
-// Write event to log
-add_to_log($course->id, "course", "report ".MODULENAME, "report/".MODULENAME."/report.php?id=$course->id", $course->id);
-
 $id = required_param('id',PARAM_INT);       // course id
 $element = required_param('element_name',PARAM_TEXT); 
 $timePeriod = required_param('time_period',PARAM_TEXT); 
@@ -79,7 +76,7 @@ switch ($element):
                 $finalTime = secondsToTime(makeTotalTime($r->id));           
                 $detailLink = '<a href="detail.php?id='.$id.'&elementid='.$r->id.'&element_name='.$r->element_name.'&page=0&time_period='.$timePeriod.'">'.get_string('detail1', 'report_'.MODULENAME).'</a>';
                 $detailLink2 = '<a href="allactions.php?id='.$id.'&elementid='.$r->id.'&element_name='.$r->element_name.'&page=0&time_period='.$timePeriod.'">'.get_string('detail2', 'report_'.MODULENAME).'</a>';
-                $table->data[] = array($r->element_name,$r->firstname." ".$r->lastname, formatDate($r->start_time),  formatDate($r->end_time),$finalTime,$r->fcount,$detailLink,$detailLink2);
+                $table->data[] = array($r->element_name,'<a href="'.$CFG->wwwroot.'/user/view.php?id='.$r->userid.'&amp;course='.$course->id.'">'.$r->firstname." ".$r->lastname, formatDate($r->start_time),  formatDate($r->end_time),$finalTime,$r->fcount,$detailLink,$detailLink2);
             endforeach;
 
             $options['stat_type'] = 'one';

@@ -25,7 +25,6 @@ print_simple_box_start();
 <?php
 
 print_simple_box_end();
-
 // stat for element
 print_simple_box_start();
 

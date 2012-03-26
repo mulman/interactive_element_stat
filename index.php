@@ -11,7 +11,6 @@ require_once('../../../config.php');
 require_once('locallib.php');
 require_once('header.php');
 
-
 // Write event to log
 add_to_log($course->id, "course", "report ".MODULENAME, "report/".MODULENAME."/index.php?id=$course->id", $course->id);
 
@@ -22,14 +21,14 @@ $rows[0][] = new tabobject('tools', "index.php?id={$course->id}&amp;view=tools",
 
 print_tabs($rows, $view); 
 
-if (file_exists($CFG->dirroot."/course/report/".MODULENAME."/{$view}report.php")){
+if (file_exists($CFG->dirroot."/course/report/".MODULENAME."/{$view}report.php"))
+{
     include $CFG->dirroot."/course/report/".MODULENAME."/{$view}report.php";
-} else {
+} 
+else {
     print_error('non existing report view');
 }
 
 print_container_end();
-
 print_footer($course);
-
 ?>
