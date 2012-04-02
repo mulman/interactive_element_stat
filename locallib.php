@@ -25,12 +25,12 @@ $allActionsElementStatColumns = array(
     get_string('time', 'report_'.MODULENAME), 
     get_string('element_part_name', 'report_'.MODULENAME),
     get_string('element_action', 'report_'.MODULENAME)   
-    ,'');
+    );
 
 $detailElementStatColumns = array(
     get_string('element_part_name', 'report_'.MODULENAME),
     get_string('total_usage_time', 'report_'.MODULENAME)    
-    ,'');
+    );
 /*
  * Vrati zoznam pouzitych interaktivnych
  * elementov v kurze.
