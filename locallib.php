@@ -59,9 +59,8 @@ function getInteractiveElementsArray($courseid)
  */
 function getUserElementStat($courseid,$elementName,$timePeriod,$page)
 {
-    global $CFG;        
+    global $CFG;     
     
-    //$sql =  "SELECT a.id,(SELECT COUNT(*) from {$CFG->prefix}".TABLEB." b WHERE b.element_usage_id = a.id) AS fcount,a.userid,a.element_name,a.start_time,a.end_time,(UNIX_timestamp(a.end_time) - UNIX_timestamp(a.start_time)) AS rozdiel,u.firstname,u.lastname FROM {$CFG->prefix}".TABLEA." a "; 
     $sql  =  "SELECT a.id,a.userid,a.element_name,u.firstname,u.lastname,";
     $sql .= "(SELECT COUNT(*) from {$CFG->prefix}".TABLEB." b WHERE b.element_usage_id = a.id AND b.element_part_action != 'noactivity') AS fcount, ";
     $sql .= "(SELECT MIN(b.time) from {$CFG->prefix}".TABLEB." b WHERE b.element_usage_id = a.id) AS start_time,";
