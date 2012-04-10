@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<XMLDB PATH="course/report/interactiveelementstat/db" VERSION="20100924" COMMENT="XMLDB file for Moodle blocks/configurable_reports"
+<XMLDB PATH="course/report/interactiveelementstat/db" VERSION="20100924" COMMENT="XMLDB file for Moodle report Interactive Element Stat"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
