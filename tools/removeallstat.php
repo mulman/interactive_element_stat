@@ -4,7 +4,7 @@
  */
 
 require_once('../../../../config.php');
-require_once('../locallib.php');
+require_once('../lib/locallib.php');
 
 $id = required_param('courseid',PARAM_INT); 
 

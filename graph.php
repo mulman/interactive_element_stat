@@ -3,7 +3,7 @@
 //Include phpMyGraph class 
 include_once('lib/phpMyGraph5.0.php');
 require_once('../../../config.php');
-require_once('locallib.php');
+require_once('/lib/locallib.php');
 
 $data = array();
 

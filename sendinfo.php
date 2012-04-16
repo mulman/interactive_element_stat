@@ -1,6 +1,6 @@
 <?php
 require_once('../../../config.php');
-require_once('locallib.php');
+require_once('/lib/locallib.php');
 
 $courseID = $SESSION->cal_course_referer; //Course ID
 $userID = $SESSION->cal_users_shown; //User ID

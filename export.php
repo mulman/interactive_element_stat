@@ -1,7 +1,7 @@
 <?php
 require_once('../../../config.php');
 require_once($CFG->libdir.'/excellib.class.php');
-require_once('locallib.php');
+require_once('/lib/locallib.php');
 
 $id = required_param('id',PARAM_INT);       // course id
 $element = required_param('element_name',PARAM_TEXT); 

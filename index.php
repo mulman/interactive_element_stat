@@ -8,7 +8,7 @@
  */
 
 require_once('../../../config.php');
-require_once('locallib.php');
+require_once('/lib/locallib.php');
 require_once('header.php');
 
 // Write event to log
