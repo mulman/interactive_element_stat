@@ -1,3 +1,18 @@
+# 1.05
+
+e1fd8d6 added new example fix
+97969b0 added new example element
+58ea898 removed empty columns from stat table
+0280d2e added README.md
+be20c07 Merge branch 'master' of github.com:suns3trid3r/interactive_element_stat
+692d5a8 Some clean up
+2e15c86 added link to user
+
+# 1.04
+
+0e3568d some clean up
+58bfbe7 added MouseOver function to interactive element
+
 # 1.03 beta 23.3.2012
 - pridana Drag an Drop funkcionalita pre element
 - pridane grafy
